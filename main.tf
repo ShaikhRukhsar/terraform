@@ -1,10 +1,16 @@
-resource "local_file" "pet" {
-  filename = var.pet_filename
-  content  = var.pet_content
+terraform {
+  required_providers {
+    local = {
+      source  = "hashicorp/local"
+      version = ">= 2.6"
+    }
+  }
+}
+resource "local_file" "demo" {
+  filename = "test.txt"
+  content  = "This file was created by Terraform"
 }
 
-resource "random_pet" "mypet" {
-  prefix    = var.random_pet_prefix
-  separator = var.random_pet_separator
-  length    = var.random_pet_length
-}
+
+
+
