@@ -1,10 +1,9 @@
-provider "local" {}
-
-resource "local_file" "demo" {
-  filename = "terraform-plugin.txt"
-  content  = "Terraform executed using Jenkins Terraform plugin"
+resource "local_file" "pet" {
+  filename = var.pet_filename
+  content  = var.pet_content
 }
-
-
-
-
+resource "random_pet" "my-pet" {
+  prefix    = var.random_pet_prefix
+  separator = var.random_pet_separator
+  length    = var.random_pet_length
+}
