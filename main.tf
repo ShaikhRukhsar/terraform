@@ -1,14 +1,8 @@
-terraform {
-  required_providers {
-    local = {
-      source  = "hashicorp/local"
-      version = ">= 2.6"
-    }
-  }
-}
+provider "local" {}
+
 resource "local_file" "demo" {
-  filename = "test.txt"
-  content  = "This file was created by Terraform"
+  filename = "terraform-plugin.txt"
+  content  = "Terraform executed using Jenkins Terraform plugin"
 }
 
 
